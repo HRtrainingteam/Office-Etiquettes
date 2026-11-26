@@ -118,3 +118,13 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
 }
+
+/**
+ * Browser health-check for the deployed web app.
+ * Opening the /exec URL sends a GET request, which Apps Script routes here.
+ */
+function doGet(e) {
+  return ContentService
+    .createTextOutput("SMC Office Etiquettes connection is active.")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
